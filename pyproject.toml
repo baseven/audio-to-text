@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "speech-recognition"
+version = "0.1.0"
+description = ""
+authors = ["Vladislav Akashev <vlad.akashev.w@gmail.com>"]
+readme = "README.md"
+packages = [
+  { include = "speech_recognition" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.scripts]
+say-hello = "speech_recognition.say_hello:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
