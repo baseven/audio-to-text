@@ -1,8 +1,8 @@
 install:
 	poetry install
 
-say-hello:
-	poetry run say-hello
+recognize:
+	poetry run recognize
 
 build:
 	poetry build
@@ -14,6 +14,6 @@ package-install:
 	python3 -m pip install --force-reinstall dist/*.whl
 
 lint:
-	poetry run flake8 speech_recognition
+	poetry run flake8 src
 
 package-update: lint build publish package-install

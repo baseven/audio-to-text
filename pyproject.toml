@@ -5,14 +5,16 @@ description = ""
 authors = ["Vladislav Akashev <vlad.akashev.w@gmail.com>"]
 readme = "README.md"
 packages = [
-  { include = "speech_recognition" },
+  { include = "src" },
 ]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+vosk = "0.3.44"
+pydub = "^0.25.1"
 
 [tool.poetry.scripts]
-say-hello = "speech_recognition.say_hello:main"
+recognize = "src.recognizer:main"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^7.0.0"
