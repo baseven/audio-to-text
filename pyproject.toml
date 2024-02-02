@@ -12,6 +12,8 @@ packages = [
 python = "^3.11"
 vosk = "0.3.44"
 pydub = "^0.25.1"
+numpy = "^1.26.3"
+scikit-learn = "^1.4.0"
 
 [tool.poetry.scripts]
 recognize = "src.recognizer:main"

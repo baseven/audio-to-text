@@ -5,6 +5,9 @@ from src.transcriber.audio_file_tools import (
     get_audio_file_convertor,
     get_audio_file_parser)
 
+SMALL_MODEL_PATH = 'models/vosk_model/vosk-model-small-ru-0.22'
+LARGE_MODEL_PATH = 'models/vosk_model/vosk-model-ru-0.42'
+
 
 def get_audio_file(file_path):
     _, file_extension = path.splitext(file_path)
@@ -21,12 +24,12 @@ def get_audio_file(file_path):
 
 def get_model_path(model_size):
     if model_size == 'small':
-        return 'models/vosk_model/vosk-model-small-ru-0.22'
+        return SMALL_MODEL_PATH
     elif model_size == 'large':
-        return 'models/vosk_model/vosk-model-ru-0.42'
+        return LARGE_MODEL_PATH
 
 
-def transcribe(file_path, model_size='small'):
+def transcribe(file_path, model_size, num_speakers):
     audio_file = get_audio_file(file_path)
     data = audio_file.readframes(audio_file.getnframes())
     # print(f'!!!Audio file {data} read')

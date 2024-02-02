@@ -16,4 +16,4 @@ package-install:
 lint:
 	poetry run flake8 src
 
-package-update: lint build publish package-install
+package-update: build publish package-install
